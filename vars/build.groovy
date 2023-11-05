@@ -2,16 +2,16 @@ def call(String mavenCommand) {
   if("${mavenCommand}" == "Clean") {
     sh "mvn clean"
   }
-    if("${mavenCommand}" == "Compile") {
+    else if("${mavenCommand}" == "Compile") {
     sh "mvn clean compile"
   }
-    if("${mavenCommand}" == "Test") {
+    else if("${mavenCommand}" == "Test") {
     sh "mvn clean test"
   }
-    if("${mavenCommand}" == "Package") {
+    else if("${mavenCommand}" == "Package") {
     sh "mvn clean package"
   }
-   else if("${mavenCommand+}" == "Install") {
+   else ("${mavenCommand+}" == "Install") {
     sh "mvn clean install"
   }
 }
