@@ -1,17 +1,17 @@
-def call(String mavenGoal) {
-  if("${mavenGoal}" == "Clean") {
+def call(String mavenCommand) {
+  if("${mavenCommand}" == "Clean") {
     sh "mvn clean"
   }
-    if("${mavenGoal}" == "Compile") {
+    if("${mavenCommand}" == "Compile") {
     sh "mvn clean compile"
   }
-    if("${mavenGoal}" == "Test") {
+    if("${mavenCommand}" == "Test") {
     sh "mvn clean test"
   }
-    if("${mavenGoal}" == "Package") {
+    if("${mavenCommand}" == "Package") {
     sh "mvn clean package"
   }
-   else if("${mavenGoal}" == "Install") {
+   else if("${mavenCommand+}" == "Install") {
     sh "mvn clean install"
   }
 }
