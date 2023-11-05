@@ -11,7 +11,7 @@ def call(String mavenCommand) {
     else if("${mavenCommand}" == "Package") {
     sh "mvn clean package"
   }
-   else ("${mavenCommand+}" == "Install") {
+   else ("${mavenCommand}" == "Install") {
     sh "mvn clean install"
   }
 }
